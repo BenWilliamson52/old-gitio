@@ -7,6 +7,14 @@ function buttonOnClick() {
 }
 
 // Update Heads Up Display with Weapon Information
+var queryString = window.location.search;
+var params = new URLSearchParams(queryString);
+var gamertag = params.get("gamertag");
+
+function changeGamertag() {
+  document.getElementById("showGamertag").innerHTML="hello "+gamertag;
+}
+
 function weaponSelection() {
   var selection = document.getElementById("equipment").value;
   var active = document.getElementById("active");
@@ -65,3 +73,5 @@ for (var i = 0; i < options.length; i++) {
 }
 
 drawHealthbar();
+
+changeGamertag();
